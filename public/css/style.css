@@ -1,0 +1,46 @@
+@import url('reset.css');
+*{
+	margin: 0px 0px 0px;
+	padding: 0px 0px 0px;
+	text-decoration:none;
+}
+img{border:none;}
+::selection{
+	background: #F19702;
+	color:#000;
+}
+.full{display:block; position:relative;	width: 100%;overflow: hidden;}
+.nofloat{clear: both;}
+.right{float: right;display: block; position: relative;}
+.left{float: left;display: block; position: relative;}
+
+body {background:#FFF;width:100%;overflow-x:hidden;}
+.head{
+	background:#F19702;
+	border-bottom: 5px solid #B26202;
+	color: #fff;
+	display:block;	
+	margin: 0 auto 0;
+	overflow: hidden;
+	position:relative;
+	width: 80%;
+}
+
+.box{
+	width: 80%;
+	position:relative;
+	display:block;
+	margin: 0 auto 0;
+	background:#FFF;
+	overflow:hidden;
+	clear: both;
+	}
+.footer{
+	background-color:#002344;
+	position:relative;
+	display:block;
+	width: 80%;
+	color:#83A3BA;
+	font-size:12px;
+	margin: 0 auto 0;
+}

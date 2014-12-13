@@ -1,0 +1,10 @@
+.left{
+	display: block;
+	float: left;
+	position: relative;
+}
+.right{
+	display: block;
+	float: right;
+	position: relative;
+}
