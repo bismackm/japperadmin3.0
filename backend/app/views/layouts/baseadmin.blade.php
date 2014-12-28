@@ -360,5 +360,6 @@
     <script src="{{URL::to('/')}}/assets/plugins/modal/js/modalEffects.js"></script>
     <!-- Modulo Admin Generales -->
     <script src="{{URL::to('/')}}/assets/js/modules/admin.js"></script>
+    <script src="{{URL::to('/')}}/assets/js/modules/usuario.js"></script>
 </body>
 </html>

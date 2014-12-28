@@ -19,8 +19,10 @@ Route::match(array('GET','POST'),'/recuperar-cuenta-admin','LoginController@recu
 
 Route::group(array('before'=>'session_user'),function()
 	{
-	Route::resource('/admin','AdminController');
 	Route::match(array('GET','POST'),'/admin/perfil','AdminController@perfil');
+	Route::resource('/admin','AdminController');
+
+	Route::resource('/usuario','UsuarioController');
 	});
 
 Route::get('/salir',function(){

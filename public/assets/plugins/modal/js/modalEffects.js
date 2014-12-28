@@ -14,8 +14,6 @@ Modal = (function() {
 	//Aquí carga el modal, pero hay que meterle un returns json
 			show : function ( returns , config) {
 
-				console.log( config.effect );
-
 				$('#content-modal').html( returns );
 				$('.md-modal').addClass('md-effect-'+config.effect);
 				$('.md-content').addClass('md-content-'+config.color);

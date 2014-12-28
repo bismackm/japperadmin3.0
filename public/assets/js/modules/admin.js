@@ -18,18 +18,7 @@ var admin = ( function () {
 	            //end
             });
 
-		},
-		ini : function(){
-
-			$('#monster').click(function( ){
-				$('#monster').fadeOut( 'slow' );
-			});
-
 		}
 
 	};
 })();
-
- window.onload = function(){
-	admin.ini();
-}

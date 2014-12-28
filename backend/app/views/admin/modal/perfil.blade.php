@@ -3,8 +3,9 @@
         <h3></h3>
 
         <div>
+         <form enctype="multipart/form-data" id="form_perfil">
             <div class="col-md-6">
-                <form enctype="multipart/form-data">
+               
                    
                     <div class="form-group">
                      @if( Session::get('user_foto')!='' )
@@ -21,17 +22,22 @@
                         @endif
                         <input id="file" type="file" multiple=true>
                     </div>
-
-                </form>
             </div>
-            <div class="col-md-4">
-                H
+            <div class="col-md-6"><br><br>
+                <div id="nombre" contenteditable="true" class="cke-editor" value="Erick">
+                    <h4>{{ Session::get('user_nombre') }}</h4>
+                </div>
+                <br>
+                <div id="mail" contenteditable="true" class="cke-editor">
+                    <h4>{{ Session::get('user_mail') }}</h4>
+                </div>
             </div>
+        </form>
         </div>
 
             <div>
                 <div class="right"><button class="btn btn-modal btn-default">Cerrar</button></div>
-                <div class="right"><button type="button" class="btn btn-default">Guardar</button></div>
+                <div class="right"><button type="button" onclick="usuario.save();" class="btn btn-default">Guardar</button></div>
             </div>
     </div>            
 </div> 
