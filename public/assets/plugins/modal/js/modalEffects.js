@@ -1,35 +1,40 @@
 /**
  * modalEffects.js v1.0.0
- * http://www.codrops.com
  *
- * Licensed under the MIT license.
- * http://www.opensource.org/licenses/mit-license.php
+ * Colors:
+ * dark / blue / red / white
  * 
  * Copyright 2013, Codrops
  * http://www.codrops.com 
  */
-Modal = (function() {
+modal = (function() {
 
 	return {
 	//Aquí carga el modal, pero hay que meterle un returns json
 			show : function ( returns , config) {
 
+                //Valores por Defecto
+                if( !config.effect ){ config.effect = '8';}
+                if( !config.color ){ config.color = 'white';}
+                //
 				$('#content-modal').html( returns );
 				$('.md-modal').addClass('md-effect-'+config.effect);
 				$('.md-content').addClass('md-content-'+config.color);
 				$('.md-content h3').text(config.title);
 
+                $('.md-content').addClass('md-content-scroll');
+
 				var overlay = document.querySelector( '.md-overlay' );
 
 				[].slice.call( document.querySelectorAll( ".btn-effect" ) ).forEach( function( el, i ) {
 
-				var modal = document.querySelector( '#' + el.getAttribute( 'data-modal' ) ),
-					close = modal.querySelector( '.btn-modal' );
+				var modalOrigin = document.querySelector( '.md-modal' ),
+					close = modalOrigin.querySelector( '.btn-modal' );
 
 				setTimeout(function(){
-					classie.add( modal, 'md-show' );
-					overlay.removeEventListener( 'click', removeModalHandler );
-					overlay.addEventListener( 'click', removeModalHandler );
+					classie.add( modalOrigin, 'md-show' );
+					//overlay.removeEventListener( 'click', removeModalHandler );
+					//overlay.addEventListener( 'click', removeModalHandler );
 					if( classie.has( el, 'md-setperspective' ) ) {
 						setTimeout( function() {
 							classie.add( document.documentElement, 'md-perspective' );
@@ -38,10 +43,10 @@ Modal = (function() {
 				}, 25);
 
 					function removeModal( hasPerspective ) {
-						classie.remove( modal, 'md-show' );
+						classie.remove( modalOrigin, 'md-show' );
 
 						setTimeout( function() {
-							modal.remove();
+							modalOrigin.remove();
 							overlay.remove();
 						}, 1000 );
 
@@ -59,7 +64,27 @@ Modal = (function() {
 						removeModalHandler();
 					});
 
-				} );
+					//Evento para que se cierre con la tecla escape
+				    $(document).on('keydown',function(e){
+					    if( e.which == 27 ){
+							removeModalHandler();
+					    };
+				    });
+
+				});
+
+                setTimeout( function(){
+                    if( $('.md-modal').find('.datepicker').length ){
+                        $('.md-modal').find('.datepicker').datepicker({
+                            format: "dd/mm/yyyy"
+                        });
+                    }
+                },0);
+
+			},
+			close : function(){
+
+				$('#closeModal').click();
 
 			}
 

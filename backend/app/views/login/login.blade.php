@@ -8,7 +8,7 @@
 <head>
     <!-- BEGIN META SECTION -->
     <meta charset="utf-8">
-    <title>JApperAdmin v3.0</title>
+    <title>Antonio Martell</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta content="" name="description" />
     <meta content="themes-lab" name="author" />
@@ -32,50 +32,40 @@
             <div class="col-sm-6 col-md-4 col-sm-offset-3 col-md-offset-4">
                 <div class="login-box clearfix animated flipInY">
                     <div class="page-icon animated bounceInDown">
-                        <img src="{{URL::to('/')}}/assets/img/account/user-icon.png" alt="Key icon">
-                    </div>
-                    <div class="login-logo">
-                        <a href="{{URL::to('/')}}" target="_blank">
-                            <img src="{{URL::to('/')}}/assets/img/account/login-logo.png" alt="Company Logo">
-                        </a>
+                        <img src="{{URL::to('/')}}/assets/img/seguridad.png">
                     </div>
                     <hr>
                     <div class="login-form">
+                        <!-- END ERROR BOX -->
+                        <form action="{{URL::to('/administration')}}" method="post">
+                            <input type="text" name="user" placeholder="ID de usuario" class="input-field form-control" maxlength="11" required/>
+                            <input type="password" name="password" placeholder="Contraseña" class="input-field form-control password" required/>
+                            <button type="submit" class="btn btn-login">Ingresar</button>
+                        </form>
                     @if(Session::get('error')!='')
                         <!-- BEGIN ERROR BOX -->
-                        <div class="alert alert-danger">
-                            <button type="button" class="close" data-dismiss="alert">×</button>
-                            <h4>Error!</h4>
-                            {{Session::get('error')}}
-                        </div>
+                        <div class="col-md-1"></div>
+                            <div class="col-lg-10">
+                                <div class="alert alert-danger">
+                                    <button type="button" class="close" data-dismiss="alert">×</button>
+                                    <h4>Error!</h4>
+                                    {{Session::get('error')}}
+                                </div>
+                            </div>
                         {{Session::forget('error')}}
                     @endif
                     @if(Session::get('check')!='')
                         <!-- BEGIN ERROR BOX -->
-                        <div class="alert alert-success">
-                            <button type="button" class="close" data-dismiss="alert">×</button>
-                            <h4>Listo!</h4>
-                            {{Session::get('check')}}
+                        <div class="col-md-1"></div>
+                            <div class="col-lg-10">
+                                <div class="alert alert-success">
+                                    <button type="button" class="close" data-dismiss="alert">×</button>
+                                    <h4>Listo!</h4>
+                                    {{Session::get('check')}}
+                                </div>
                         </div>
                         {{Session::forget('check')}}
                     @endif
-                        <!-- END ERROR BOX -->
-                        <form action="{{URL::to('/login')}}" method="post">
-                            <input type="email" name="user" placeholder="@mail" class="input-field form-control user" required/>
-                            <input type="password" name="pass" placeholder="Contraseña" class="input-field form-control password"  required/>
-                            <button type="submit" class="btn btn-login">Ingresar</button>
-                        </form>
-                        <div class="login-links">
-                            <a href="{{URL::to('/recuperar-cuenta-admin')}}">¿Olvidaste la Clave?</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="social-login row">
-                    <div class="fb-login col-lg-6 col-md-12 animated flipInX">
-                        <a href="#" class="btn btn-facebook btn-block"><strong>Facebook</strong></a>
-                    </div>
-                    <div class="twit-login col-lg-6 col-md-12 animated flipInX">
-                        <a href="{{URL::to('/')}}" class="btn btn-twitter btn-block"><strong>Frontend</strong></a>
                     </div>
                 </div>
             </div>

@@ -110,12 +110,12 @@
     };
     var defaultPreviewSettings = {
         image: {width: "auto", height: "160px"},
-        html: {width: "320px", height: "180px"},
+        html: {width: "100%", height: "180px"},
         text: {width: "160px", height: "160px"},
         video: {width: "320px", height: "240px"},
         audio: {width: "320px", height: "80px"},
         flash: {width: "320px", height: "240px"},
-        object: {width: "320px", height: "300px"},
+        object: {width: "100%", height: "300px"},
         other: {width: "160px", height: "120px"}
     };
     var defaultFileTypeSettings = {

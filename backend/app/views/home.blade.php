@@ -22,7 +22,7 @@
 </div>
 
 <div class="footer">
-	Taba
+	Footer
 </div>
 
 </body>

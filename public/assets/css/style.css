@@ -8,3 +8,124 @@
 	float: right;
 	position: relative;
 }
+#messages{
+	position: fixed;
+	z-index: 10001;
+	right: 0;
+	width: 20%;
+	margin: 10px;
+	bottom: 0;
+}
+.btn-close{
+	float: right;
+	margin: -8px;
+}
+.notice .content{
+	max-height: 175px;
+	overflow: hidden;
+}
+.notice .image{
+  max-width: 175px;
+  margin-bottom: 15px;
+}
+.cursor-pointer{
+	cursor: pointer !important;
+}
+.imagen{
+	width: 100%;
+	padding: 20px 5px;
+}
+.cke-editor h4{
+	padding: 5px;
+}
+.cke-editor ul, .cke-editor li{
+	list-style: initial !important;
+}
+.display-none{
+	display: none;
+}
+.parrafo_simple, .listas{
+	width: auto !important;
+}
+
+@media (max-width: 600px) {
+    .facet_sidebar {
+        display: none;
+    }
+}
+.margin-top{
+    margin-top: 20px;
+}
+
+.no-margin{
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+.no-margin-SoloRight{
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.width-500{
+    width: 500px;
+}
+.width-400{
+    width: 400px;
+}
+.width-300{
+    width: 300px;
+}
+
+.unhappyMessage{
+	color: red;
+	font-size: 12px;
+	font-weight: 500
+}
+.selectpicker{
+	font-size: 12px !important;
+}
+.label-md{
+    padding: 4px 8px !important;
+    font-size: 13px !important;
+}
+
+.powered{
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	left: 0;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+
+	text-align: right;
+
+	margin:0px 0px 15px -55px;
+
+
+
+	}
+
+.powered .imagen{
+	height: 10px;
+	width: 20px;
+	display: block;
+	float: right;
+	background: url("../img/sga.png") no-repeat;
+
+}
+
+.powered:hover .imagen{
+
+	background: url("../img/sga-hover.png") no-repeat;
+
+}
+
+a.linksga{
+	background: #b6bcbf;
+	color: #131517;
+}
+.full{
+	width: 100%;
+}

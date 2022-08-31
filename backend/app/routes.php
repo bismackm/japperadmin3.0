@@ -14,15 +14,57 @@
 Route::get('/','HomeController@home');
 Route::get('/home','HomeController@home');
 
-Route::match(array('GET','POST'),'/login','LoginController@login');
-Route::match(array('GET','POST'),'/recuperar-cuenta-admin','LoginController@recuperar');
+Route::match(
+    array('GET','POST'),
+    '/administration',
+    'LoginController@login'
+);
 
-Route::group(array('before'=>'session_user'),function()
-	{
-	Route::match(array('GET','POST'),'/admin/perfil','AdminController@perfil');
-	Route::resource('/admin','AdminController');
+Route::match(
+	array('GET','POST'),
+	'/recuperar-cuenta-admin',
+	'LoginController@recuperar'
+);
 
-	Route::resource('/usuario','UsuarioController');
+Route::group(array('before'=>'user'),function() {
+    /**/
+    Route::match(
+        array('GET','POST'),
+        '/usuario/profile',
+        'UsersController@profile'
+    );
+    Route::match(
+        array('GET','POST'),
+        '/usuario/password',
+        'UsersController@password'
+    );
+	Route::resource('/usuario','UsersController');
+
+    /**/
+    Route::post('/album/save','AlbumController@save');
+    Route::post('/album/remove','AlbumController@remove');
+    Route::post('/album/find','AlbumController@find');
+    Route::post('/album/updates','AlbumController@updates');
+    Route::resource('/album','AlbumController');
+
+    /**/
+    Route::get('/album/{alb_id}/songs','SongController@index');
+    Route::post('/album/{alb_id}/songs','SongController@store');
+    Route::post('/album/{alb_id}/song/remove','SongController@remove');
+    Route::post('/album/{alb_id}/song/find','SongController@find');
+    Route::post('/album/{alb_id}/song/updates','SongController@updates');
+
+    /**/
+
+    /**/
+    Route::match(
+        array('GET','POST'),
+        '/admin/templates',
+        'AdminController@templates'
+    );
+
+    Route::resource('/admin','AdminController');
+
 	});
 
 Route::get('/salir',function(){
