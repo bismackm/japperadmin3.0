@@ -3,7 +3,7 @@
 @section('content')
        
     <div class="col-md-12">
-		<h3><i class="fa fa-bookmark"></i> <strong>Álbumes </strong></h3>
+		<h3><i class="fa fa-bookmark"></i> <strong>Compradores </strong></h3>
 	</div>
 
 	<div class="right">
@@ -22,49 +22,37 @@
                     <table class="table table-striped table-hover table-dynamic">
                         <thead>
                             <tr>
+                                <th>Fecha de Registro</th>
                                 <th>Nombre</th>
-                                <th>Año</th>
-                                <th>Imagen</th>
-                                <th>Opciones</th>
+                                <th>DNI</th>
+                                <th>Teléfono</th>
+                                <th>Tipo de Entrada</th>
+                                <th>Forma de Pago</th>
+                                <th>QR - Correlativo</th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
-{{--                            @foreach( $albumes as $album )--}}
-{{--                                <tr alb_id="{{ $album->alb_id }}">--}}
-{{--                                    <td>{{ $album->alb_nombre }}</td>--}}
-{{--                                    <td>{{ $album->alb_anio}}</td>--}}
-{{--                                    <td>{{ $album->alb_foto }}</td>--}}
-{{--                                    <td>--}}
-{{--                                        <a class="edit btn btn-dark btn-effect" title="Editar" href="javascript:;" onclick="album.willUpdate( this )">--}}
-{{--                                            <i class="fa fa-pencil-square-o"></i>--}}
-{{--                                        </a>--}}
+                            @foreach( $buyers as $buyer )
+                                <tr alb_id="{{ $buyer->id }}">
+                                    <td>{{ $buyer->created_at }}</td>
+                                    <td>{{ $buyer->name }}</td>
+                                    <td>{{ $buyer->dni}}</td>
+                                    <td>{{ $buyer->phone }}</td>
+                                    <td>{{ $type_entries[$buyer->type_entry] }}</td>
+                                    <td>{{ $pay_modes[$buyer->pay_mode] }}</td>
+                                    <td>{{ $buyer->qr_code  }}</td>
+                                    <td>
+                                        <a class="edit btn btn-dark btn-effect" title="Editar" href="javascript:;" onclick="album.willUpdate( this )">
+                                            <i class="fa fa-pencil-square-o"></i>
+                                        </a>
 {{--                                        <a class="edit btn btn-dark btn-effect" title="Eliminar" href="javascript:;" onclick="album.willRemove( this )">--}}
 {{--                                            <i class="fa fa-trash-o"></i>--}}
 {{--                                        </a>--}}
-{{--                                        <a class="edit btn btn-dark btn-effect" title="Revisar canciones" href="{{ URL::to('/album/'.$album->alb_id.'/songs')  }}" >--}}
-{{--                                            <i class="fa fa-music"></i>--}}
-{{--                                        </a>--}}
-{{--                                    </td>--}}
-{{--                                </tr>--}}
-{{--                            @endforeach--}}
+                                    </td>
+                                </tr>
+                            @endforeach
 
-
-                            <tr>
-                                <td>Hola</td>
-                                <td>12</td>
-                                <td>3</td>
-                                <td>
-                                    <a class="edit btn btn-dark btn-effect" title="Editar" href="javascript:;" onclick="album.willUpdate( this )">
-                                        <i class="fa fa-pencil-square-o"></i>
-                                    </a>
-                                    <a class="edit btn btn-dark btn-effect" title="Eliminar" href="javascript:;" onclick="album.willRemove( this )">
-                                        <i class="fa fa-trash-o"></i>
-                                    </a>
-                                    <a class="edit btn btn-dark btn-effect" title="Revisar canciones" href="#" >
-                                        <i class="fa fa-music"></i>
-                                    </a>
-                                </td>
-                            </tr>
 
                         </tbody>
                     </table>

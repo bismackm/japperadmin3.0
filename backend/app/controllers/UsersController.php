@@ -27,7 +27,7 @@ class UsersController extends BaseController{
 		}
 		elseif(Request::isMethod('post')){
 
-			$user = User::find( Session::get('user') );
+			$user = User::find( Session::get('id') );
 
 			$passactual = Input::get('last_password');
 			$passnew = Input::get('new_password');
@@ -55,7 +55,7 @@ class UsersController extends BaseController{
 
 		try {
 
-			$user = User::find(Session::get('user'));
+			$user = User::find(Session::get('id'));
 			$user->name = Input::get('nombre');
 			$user->user = Input::get('ruc');
 

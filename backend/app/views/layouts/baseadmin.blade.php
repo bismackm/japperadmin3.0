@@ -11,7 +11,7 @@
     <!-- BEGIN META SECTION -->
     <meta charset="utf-8">
     @section('title') 
-        <title>Antonio Martell Oficial</title>
+        <title>Eventos</title>
     @show
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta content="" name="description" />
@@ -61,7 +61,7 @@
                     <img src="{{URL::to('/')}}/images/logo.jpg" alt="logo" width="79" height="26">
                 </a> -->
             </div>
-            <div class="navbar-center">Administración - Antonio Martell Sánchez</div>
+            <div class="navbar-center">Administración</div>
             <div class="navbar-collapse collapse">
                 <!-- BEGIN TOP NAVIGATION MENU -->
                 <ul class="nav navbar-nav pull-right header-menu">
@@ -76,11 +76,11 @@
                             <i class="fa fa-angle-down p-r-10"></i>
                         </a>
                         <ul class="dropdown-menu">
-                            <li>
-                                <a class="btn-effect" data-modal="modal-general" onclick="usuario.profile();">
-                                    <div class="livicon" data-n="user" data-s="16"> Mi Perfil</div>
-                                </a>
-                            </li>
+{{--                            <li>--}}
+{{--                                <a class="btn-effect" data-modal="modal-general" onclick="usuario.profile();">--}}
+{{--                                    <div class="livicon" data-n="user" data-s="16"> Mi Perfil</div>--}}
+{{--                                </a>--}}
+{{--                            </li>--}}
                             <li>
                                 <a class="btn-effect" data-modal="modal-general" onclick="usuario.password();">
                                     <div class="livicon" data-n="gears" data-s="16"> Contraseña</div>
@@ -125,12 +125,12 @@
                     <li class="active">
                         <a href="#">
                             <i class="fa fa-edit"></i>
-                            <span class="sidebar-text">Discografía</span>
+                            <span class="sidebar-text">Gestor</span>
                             <span class="fa arrow"></span>
                         </a>
                         <ul class="submenu collapse">
                             <li>
-                                <a href="{{ URL::to('/admin') }}"><span class="sidebar-text">Álbumes</span></a>
+                                <a href="{{ URL::to('/admin') }}"><span class="sidebar-text">Compradores</span></a>
                             </li>
                         </ul>
                     </li>
@@ -143,14 +143,7 @@
                         </a>
                           <ul class="submenu collapse">
                             <li>
-                                <a href="javascript:void(0)" data-modal="modal-general" onclick="usuario.profile()"><span class="sidebar-text">Perfil</span></a>
-                            </li>
-                            <li>
                                 <a href="javascript:void(0)" data-modal="modal-general" onclick="usuario.password()"><span class="sidebar-text">Cambiar Contraseña</span></a>
-                            </li>
-                            <li>
-                                <a href="{{ URL::to('/salir') }}"><span class="sidebar-text">Salir</span></a>
-
                             </li>
                         </ul>
                     </li>
@@ -223,7 +216,6 @@
     <script src="{{URL::to('/')}}/assets/js/general.js"></script>
 
     <script src="{{URL::to('/')}}/assets/js/modules/album.js"></script>
-    <script src="{{URL::to('/')}}/assets/js/modules/song.js"></script>
 
     @yield('code_footer')
 

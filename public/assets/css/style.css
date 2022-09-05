@@ -42,7 +42,7 @@
 	list-style: initial !important;
 }
 .display-none{
-	display: none;
+	display: none !important;
 }
 .parrafo_simple, .listas{
 	width: auto !important;

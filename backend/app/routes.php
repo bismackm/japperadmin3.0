@@ -26,6 +26,8 @@ Route::match(
 	'LoginController@recuperar'
 );
 
+Route::get('/qr/verify/{qr_code}','BuyersController@verify_qr_code');
+
 Route::group(array('before'=>'user'),function() {
     /**/
     Route::match(
@@ -41,20 +43,12 @@ Route::group(array('before'=>'user'),function() {
 	Route::resource('/usuario','UsersController');
 
     /**/
-    Route::post('/album/save','AlbumController@save');
-    Route::post('/album/remove','AlbumController@remove');
-    Route::post('/album/find','AlbumController@find');
-    Route::post('/album/updates','AlbumController@updates');
-    Route::resource('/album','AlbumController');
-
-    /**/
-    Route::get('/album/{alb_id}/songs','SongController@index');
-    Route::post('/album/{alb_id}/songs','SongController@store');
-    Route::post('/album/{alb_id}/song/remove','SongController@remove');
-    Route::post('/album/{alb_id}/song/find','SongController@find');
-    Route::post('/album/{alb_id}/song/updates','SongController@updates');
-
-    /**/
+    Route::post('/buyer/save','BuyersController@save');
+    Route::post('/buyer/remove','BuyersController@remove');
+    Route::post('/buyer/find','BuyersController@find');
+    Route::post('/buyer/updates','BuyersController@updates');
+    Route::get('/buyers/qr_correlative','BuyersController@get_qr_correlative');
+    Route::resource('/buyer','BuyersController');
 
     /**/
     Route::match(

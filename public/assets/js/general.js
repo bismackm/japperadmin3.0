@@ -129,7 +129,6 @@ var general = ( function () {
 				},5000);
 		},
 		getHost : function(){
-			console.log('host')
 			return $('body').attr('host');
 		}
 
